@@ -9,7 +9,7 @@
 
 <body>
 
-    <canvas id="gameCanvas" width="1450" height="720"></canvas>
+    <canvas id="gameCanvas" width="1400" height="700"></canvas>
 
 
     <script>
@@ -17,11 +17,17 @@
         var canvasContext;
         var ballX = 50;
         var ballY = 50;
-        var ballSpeedX = 10;
-        var ballSpeedY = 3;
+        var ballSpeedX = 20;
+        var ballSpeedY = 4;
 
         var paddle1Y = 50;
+        var paddle2Y = 50;
+
+        var player1Score = 0
+        var player2Score = 0
+
         const PADDLE_HEIGHT = 100;
+        const PADDLE_THICKNESS = 10;
 
         function calculateMousePos(evt) {
             var rect = rect = canvas.getBoundingClientRect();
@@ -55,21 +61,57 @@
 
         }
 
+        //ball reset to center and moves opposite after score
+        function ballReset() {
+            ballSpeedX = -ballSpeedX;
+            ballX = canvas.width/2;
+            ballY = canvas.height/2;
+
+        }
+
+        //bot player 2
+        function computerMovement(){
+            var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2);
+            var shakeControl = 35;
+            var botDifficulty = 5;
+            // botDifficulty 1- 5
+            if (paddle2YCenter < ballY - shakeControl){
+                paddle2Y += botDifficulty;
+            }else if (paddle2YCenter > ballY + shakeControl){
+                paddle2Y -= botDifficulty;
+            }
+        }
+
         //ball bouncing
         function moveEverything() {
 
-            ballX = ballX + ballSpeedX;
-            ballY = ballY + ballSpeedY;
+            computerMovement();
+
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+
+
             if (ballX < 0) {
-                ballSpeedX = -ballSpeedX;
+                //agar paddle sey takraey toh
+                if (ballY > paddle1Y && ballY < paddle1Y+PADDLE_HEIGHT){
+                    ballSpeedX = -ballSpeedX;
+                }else {
+                    ballReset();
+                    player2Score++;
+                }
             }
-            else if (ballX > canvas.width) {
-                ballSpeedX = -ballSpeedX;
+            if (ballX > canvas.width) {
+                if (ballY > paddle2Y && ballY < paddle2Y+PADDLE_HEIGHT){
+                    ballSpeedX = -ballSpeedX;
+                }else {
+                    ballReset();
+                    player1Score++;
+                }
             }
-            else if (ballY > canvas.height) {
+            if (ballY > canvas.height) {
                 ballSpeedY = -ballSpeedY;
             }
-            else if (ballY < 0) {
+            if (ballY < 0) {
                 ballSpeedY = -ballSpeedY;
             }
         }
@@ -79,7 +121,9 @@
             colorRect(0, 0, canvas.width, canvas.height, 'black')
 
             // left paddle
-            colorRect(0, paddle1Y, 10, PADDLE_HEIGHT, 'white')
+            colorRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white')
+            // Right paddle
+            colorRect(canvas.width - PADDLE_THICKNESS, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white')
 
             // ball
             canvasContext.fillStyle = 'red';
@@ -87,6 +131,11 @@
             // context.arc(x, y, radius, startAngle, endAngle, counterclockwise)
             canvasContext.arc(ballX, ballY, 10, 0, Math.PI * 2, true);
             canvasContext.fill();
+
+            canvasContext.font = "20px Georgia";
+            canvasContext.fillText(`Your Score: ${player1Score}`,200,100);
+            canvasContext.fillText(`Bot Score: ${player2Score}`,canvas.width -400,100);
+
 
 
         }
