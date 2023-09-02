@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pinball_football</title>
+</head>
+
+<body>
+
+    <canvas id="gameCanvas" width="1450" height="720"></canvas>
+
+
+    <script>
+        var canvas;
+        var canvasContext;
+        var ballX = 50;
+        var ballSpeedX = 5;
+        window.onload = function () {
+            canvas = document.getElementById('gameCanvas');
+            canvasContext = canvas.getContext('2d');
+
+
+            var framePerSecond = 30;
+            setInterval(function () {
+                moveEverything();
+                drawEverything();
+            }, (1000 / framePerSecond));
+
+        }
+
+        //ball bouncing
+        function moveEverything() {
+
+            ballX = ballX + ballSpeedX;
+            if (ballX < 0) {
+                ballSpeedX = -ballSpeedX;
+            }
+            else if (ballX > canvas.width) {
+                ballSpeedX = -ballSpeedX;
+            }
+        }
+
+        function drawEverything() {
+            //background
+            colorRect(0, 0, canvas.width, canvas.height, 'black')
+            // left paddle
+            colorRect(0, 210, 10, 100, 'white')
+            // ball
+            colorRect(ballX, 100, 10, 10, 'red')
+
+        }
+
+        //to make draw code convenient 
+        function colorRect(leftX, topY, width, height, drawColor) {
+            canvasContext.fillStyle = drawColor;
+            canvasContext.fillRect(leftX, topY, width, height);
+        }
+
+    </script>
+
+</body>
+
+</html>
