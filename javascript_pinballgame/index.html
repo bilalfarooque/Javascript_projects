@@ -16,7 +16,25 @@
         var canvas;
         var canvasContext;
         var ballX = 50;
-        var ballSpeedX = 5;
+        var ballY = 50;
+        var ballSpeedX = 10;
+        var ballSpeedY = 3;
+
+        var paddle1Y = 50;
+        const PADDLE_HEIGHT = 100;
+
+        function calculateMousePos(evt) {
+            var rect = rect = canvas.getBoundingClientRect();
+            var root = document.documentElement;
+            var mouseX = evt.clientX - rect.left - root.scrollLeft;
+            var mouseY = evt.clientY - rect.top - root.scrollTop;
+            return {
+                x: mouseX,
+                y: mouseY 
+            }
+        }
+
+
         window.onload = function () {
             canvas = document.getElementById('gameCanvas');
             canvasContext = canvas.getContext('2d');
@@ -28,27 +46,48 @@
                 drawEverything();
             }, (1000 / framePerSecond));
 
+            canvas.addEventListener('mousemove',
+                function(evt) {
+                    var mousePos = calculateMousePos(evt)
+                    paddle1Y = mousePos.y - (PADDLE_HEIGHT/2);
+                }
+            )
+
         }
 
         //ball bouncing
         function moveEverything() {
 
             ballX = ballX + ballSpeedX;
+            ballY = ballY + ballSpeedY;
             if (ballX < 0) {
                 ballSpeedX = -ballSpeedX;
             }
             else if (ballX > canvas.width) {
                 ballSpeedX = -ballSpeedX;
             }
+            else if (ballY > canvas.height) {
+                ballSpeedY = -ballSpeedY;
+            }
+            else if (ballY < 0) {
+                ballSpeedY = -ballSpeedY;
+            }
         }
 
         function drawEverything() {
             //background
             colorRect(0, 0, canvas.width, canvas.height, 'black')
+
             // left paddle
-            colorRect(0, 210, 10, 100, 'white')
+            colorRect(0, paddle1Y, 10, PADDLE_HEIGHT, 'white')
+
             // ball
-            colorRect(ballX, 100, 10, 10, 'red')
+            canvasContext.fillStyle = 'red';
+            canvasContext.beginPath();
+            // context.arc(x, y, radius, startAngle, endAngle, counterclockwise)
+            canvasContext.arc(ballX, ballY, 10, 0, Math.PI * 2, true);
+            canvasContext.fill();
+
 
         }
 
