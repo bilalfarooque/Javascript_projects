@@ -29,7 +29,7 @@ formatSwitchBtn.addEventListener("click", ()=> {
         formatSwitchBtn.setAttribute("data-format","12")
     }
         
-        
+
 })
 
 
