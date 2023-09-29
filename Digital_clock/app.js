@@ -78,3 +78,9 @@ menuButton.addEventListener("click", ()=>{
 
 
 
+document.addEventListener("click", (e) => {
+    if (e.target.id !== "active-menu") {
+        menuShow.classList.remove("active");
+    }
+
+})

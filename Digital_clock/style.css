@@ -39,7 +39,39 @@
   justify-content: center;
   position: relative;
   font-weight: 700;
+  width: 70%;
   margin: 3px;
+  background-color: #2d2f41;
+  padding: 10px;
+}
+
+/* background glowing */
+.clock:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right:-5px ;
+    background: linear-gradient(45deg,#24ff6d,#2f93f1,#ff5e9a);
+    background-size: 200% 200%;
+    z-index: -5;
+    animation: animate 2s ease infinite;
+    filter: blur();
+
+}
+
+@keyframes animate {
+    0%{
+        background: linear-gradient(45deg,#ff5e9a,#24ff6d,#2f93f1,);
+    }
+    50%{
+        background: linear-gradient(45deg,#2f93f1,#ff5e9a,#24ff6d);
+    }
+    100%{
+        background: linear-gradient(45deg,#24ff6d,#2f93f1,#ff5e9a);
+    }
+    
 }
 
 .clock span {
@@ -197,3 +229,5 @@
   box-shadow: 5px 5px 25px #0bff8d;
   transform: translateX(50%);
 }
+
+
