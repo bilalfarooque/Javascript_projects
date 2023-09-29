@@ -1,6 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+
 *,::after,::before{
     box-sizing:border-box;
     margin: 0;
     padding: 0;
+}
+
+body{
+    background: #452342;
+}
+
+.container{
+    width:90%;
+    max-width: 450px;
+    height: 85vh;
+    background-color: rgb(15, 61, 114);
+    text-align: center;
+    margin: 10px auto 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #ffff;
+    padding: 30px 30px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.search{
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 20px;
+    position: relative;
+    
+}
+
+/* to be updated for large */
+.search img{
+    position: absolute;
+    right: 10px;
+}
+
+#input-box{
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: #f6faf9;
+    color: #555;
+    padding: 20px 20px;
+    border-radius: 30px;
+    height: 50px;
+    /* margin-right: 10px; */
+    font-size: 18px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+
+}
+
+.weather-icon{
+    width: 100px;
+}
+
+.humidity-icon,.wind-icon{
+    width: 30px;
+    margin-right: 5px;
+}
+
+.location{
+    width: 20px;
+    margin-right: 5px;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.temp{
+    font-size: 80px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+    /* border-radius: 10px;
+    background: transparent;
+    box-shadow: 5px 5px 15px  rgba(0, 0, 0, 0.4); */
 }
 
