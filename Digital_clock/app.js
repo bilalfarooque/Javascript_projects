@@ -7,6 +7,36 @@ let mon = document.getElementById("mon");
 let date = document.getElementById("date");
 let year = document.getElementById("year");
 
+
+//format change on toggle
+
+let formatSwitchBtn = document.querySelector(".switch-btn");
+
+formatSwitchBtn.addEventListener("click", ()=> {
+    
+    //whenever click class active is added into btn
+    formatSwitchBtn.classList.toggle("active");
+
+
+    let formatvalue = formatSwitchBtn.getAttribute("data-format");
+
+    //change data-format value for toggle
+    if(formatvalue == 12 ){
+
+        formatSwitchBtn.setAttribute("data-format","24")
+    } 
+    else{
+        formatSwitchBtn.setAttribute("data-format","12")
+    }
+        
+        
+})
+
+
+
+ 
+//clock settings
+
 setInterval(() => {
   let currentTime = new Date();
   let hours = currentTime.getHours();
@@ -15,7 +45,11 @@ setInterval(() => {
   period.innerHTML = hours >= 12 ? (period = "PM") : (period = "AM");
 
   //set 12hour format
-  hours = hours > 12 ? hours - 12 : hours;
+  let formatvalue = formatSwitchBtn.getAttribute("data-format");
+
+  if(formatvalue == 12){
+      hours = hours > 12 ? hours - 12 : hours;
+  }
 
   // zero before padding
   hr.innerHTML = (hours < 10 ? "0" : "") + hours;
@@ -29,3 +63,18 @@ setInterval(() => {
   year.innerHTML = currentTime.getFullYear();
   date.innerHTML = currentTime.getDate();
 }, 100);
+
+
+
+
+//menu toggle button
+
+const menuButton = document.querySelector(".menu-btn");
+const menuShow = document.querySelector(".menu");
+
+menuButton.addEventListener("click", ()=>{
+    menuShow.classList.toggle("active");
+});
+
+
+
