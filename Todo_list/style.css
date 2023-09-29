@@ -21,7 +21,7 @@
   max-width: 600px;
   background: #ffff;
   border-radius: 15px;
-  margin: 100px auto 20px;
+  margin: 10px auto 20px;
   padding: 40px 30px 70px;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.5),-5px -5px 15px rgba(0,0,0,0.2);
 }
@@ -109,7 +109,7 @@ ul li:before {
   background-image: url(./assests/uncheck.png);
   background-size: cover;
   background-position: center;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 ul li.checked:before {

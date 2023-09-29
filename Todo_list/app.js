@@ -17,6 +17,10 @@ addBtn.addEventListener("click", () => {
 
   //   clear the input
   inputBox.value = "";
+
+  //save data
+
+  saveData();
 });
 
 //For DOM trees which represent HTML documents, the returned tag name is always in the canonical upper-case form. For example, tagName called on a <div> element returns "DIV"
@@ -25,8 +29,23 @@ addBtn.addEventListener("click", () => {
 listBox.addEventListener("click", function (e) {
   if (e.target.tagName === "LI") {
     e.target.classList.toggle("checked");
+    saveData();
   }
   else if(e.target.tagName === "SPAN"){
     e.target.parentElement.remove();
+    saveData();
   }
 },false);
+
+//saving data to avoid lost on reload
+function saveData(){
+    localStorage.setItem('data',listBox.innerHTML);
+}
+
+//show data saved
+
+function showData(){
+    listBox.innerHTML = localStorage.getItem('data')
+}
+
+showData();
