@@ -11,18 +11,26 @@
 
 <body>
     <div class="container">
-        <h2>Weather App</h2>
+        <!-- <h2>Weather App</h2> -->
 
         <div class="search">
             <input type="text" placeholder="city/place" spellcheck="false" id="input-box">
             <img src="./assets/search.png" alt="search" width="25px" id="search.btn">
         </div>
+        <div class="error">
+            <p>Invalid City Name</p>
+        </div>
 
 
         <div class="weather">
             <img src="./assets/clouds.png" alt="clouds" class="weather-icon">
+            <h3 class="weather-type">Cloudy</h3>
             <h1 class="temp">22°C</h1>
-            <img src="./assets/location.png" alt="pin" class="location"><h2 class="city">New York </h2>
+            <h5 class="feels">Feels like 25°C</h5>
+            <div class="city-location">
+                <img src="./assets/location.png" alt="pin" class="location">
+                <h2 class="city">New York</h2>
+            </div>
 
             <div class="details">
                 <div class="col">
