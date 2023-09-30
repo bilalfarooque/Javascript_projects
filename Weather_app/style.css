@@ -8,14 +8,14 @@
 }
 
 body{
-    background: #452342;
+    background: #aeadae;
 }
 
 .container{
     width:90%;
     max-width: 450px;
-    height: 85vh;
-    background-color: rgb(15, 61, 114);
+    height: 88vh;
+    background-color: rgba(15, 61, 114,0.9);
     text-align: center;
     margin: 10px auto 10px;
     border-radius: 15px;
@@ -27,6 +27,21 @@ body{
     font-family: 'Open Sans', sans-serif;
 
 }
+
+
+/* video */
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
 
 .search{
     width: 100%;
@@ -75,7 +90,7 @@ body{
     width: 120px;
     margin: auto;
     transition: 5s ease;
-    animation: myAnim 4s ease 5s 1 normal forwards;
+    animation: myAnim 4s ease 5s 2 normal forwards;
 }
 
 @keyframes myAnim {

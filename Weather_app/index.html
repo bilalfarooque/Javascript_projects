@@ -13,6 +13,7 @@
     <div class="container">
         <!-- <h2>Weather App</h2> -->
 
+        
         <div class="search">
             <input type="text" placeholder="city/place" spellcheck="false" id="input-box">
             <img src="./assets/search.png" alt="search" width="25px" id="search.btn">
@@ -23,6 +24,12 @@
 
 
         <div class="weather">
+
+            <video autoplay muted loop id="background-video" class="back-video">
+                <source src="./assets/videos/cloudy.mp4" type="video/mp4">
+            </video>
+    
+
             <img src="./assets/clouds.png" alt="clouds" class="weather-icon">
             <h3 class="weather-type">Cloudy</h3>
             <h1 class="temp">22°C</h1>
