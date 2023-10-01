@@ -58,7 +58,8 @@ body{
 /* to be updated for large */
 .search img{
     position: absolute;
-    right: 10px;
+    right: 4%;
+    top: 12px;
     cursor: pointer;
 }
 

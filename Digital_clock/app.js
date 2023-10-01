@@ -44,11 +44,16 @@ setInterval(() => {
   //set time period AM/PM
   period.innerHTML = hours >= 12 ? (period = "PM") : (period = "AM");
 
+
   //set 12hour format
   let formatvalue = formatSwitchBtn.getAttribute("data-format");
 
   if(formatvalue == 12){
       hours = hours > 12 ? hours - 12 : hours;
+      document.querySelector('#period').style.visibility = "visible";
+      
+  }else if (formatvalue == 24) {
+    document.querySelector('#period').style.visibility = "hidden";
   }
 
   // zero before padding

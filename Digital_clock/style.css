@@ -104,6 +104,7 @@
 }
 
 #period {
+  visibility: visible;
   background: -webkit-linear-gradient(90deg, #f6ff4d, #f2ff5f);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
