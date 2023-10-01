@@ -13,10 +13,12 @@ async function checkWeather(cityName) {
   const response = await fetch(apiUrl + cityName + `&appid=${apiKey}`);
   var data = await response.json();
 
+  //invalid city name handler
   if (response.status == 404) {
     document.querySelector(".error").style.visibility = "visible";
-    document.querySelector(".weather").style.visibility = "hidden";
-    weatherIcon.style.display = "none";
+    // document.querySelector(".weather").style.visibility = "hidden";
+    
+    // weatherIcon.style.display = "none";
   } 
   else {
     console.log(data);
@@ -63,7 +65,7 @@ async function checkWeather(cityName) {
     
     document.querySelector(".error").style.visibility = "hidden";
     document.querySelector(".weather").style.visibility = "visible";
-    weatherIcon.style.display = "block";
+    // weatherIcon.style.display = "block";
 
    
   }
