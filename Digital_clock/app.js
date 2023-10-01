@@ -58,7 +58,7 @@ setInterval(() => {
   sec.innerHTML =
     (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
 
-  day.innerHTML = currentTime.toLocaleString("default", { weekday: "long" });
+  day.innerHTML = currentTime.toLocaleString("default", { weekday: "long" }) + ",";
   mon.innerHTML = currentTime.toLocaleString("default", { month: "short" });
   year.innerHTML = currentTime.getFullYear();
   date.innerHTML = currentTime.getDate();
