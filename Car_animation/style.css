@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./images/sky.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.highway {
+  background-image: url(./images/road.jpg);
+  height: 200px;
+  width: 500%;
+  display: block;
+  position: absolute;
+  background-repeat: repeat-x;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  animation: highway 5s linear infinite;
+}
+
+@keyframes highway {
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+
+.city {
+  height: 250px;
+  width: 500%;
+  background-image: url(./images/city.png);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  display: block;
+  z-index: 1;
+  background-repeat: repeat-x;
+  animation: city 20s linear infinite;
+}
+
+@keyframes city {
+  100% {
+    transform: translateX(-3000px);
+  }
+}
+
+.car {
+  width: 250px;
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translate(-50%);
+  z-index: 3;
+  animation: carPos 3s linear infinite;
+}
+
+@keyframes carPos{
+  0% {
+    transform: translate(90px,-50px) ;
+  } 
+  25% {
+    transform: translate(-200px,-20px) ;
+  } 
+  50% {
+    transform: translate(200px,-50px) ;
+  } 
+  75% {
+    transform: translate(150px,-70px) ;
+  } 
+  100% {
+    transform: translate(90px,-50px) ;
+  } 
+}
+
+
+.car img {
+  width: 100%;
+  animation: car 1s linear infinite;
+  position: relative;
+}
+
+@keyframes car {
+  0% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  0% {
+    transform: translateY(-1px);
+  }
+}
+
+.wheels {
+  position: absolute;
+  left: 50%;
+  bottom: 52px;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.wheels img{
+    width: 45px;
+    height: 45px;
+    animation: wheel 2s linear infinite;
+}
+
+#backWheel {
+  position: absolute;
+  left: -103px;
+}
+
+#frontWheel {
+  position: absolute;
+  left: 50px;
+}
+
+@keyframes wheel {
+  100% {
+    transform: rotate(360deg);
+  }
+}
