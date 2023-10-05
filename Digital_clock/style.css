@@ -179,7 +179,6 @@
   box-shadow: 6px 5px 20px rgba(9, 9, 9, 0.4);
   margin: 10px;
   visibility: hidden;
-  /* opacity: 0; */
   transition: 0.2s ease;
 }
 
