@@ -26,6 +26,7 @@ const questions = [
   },
 ];
 
+//startQuiz
 function startQuiz() {
   console.log("startQuiz started");
   currentQuestionIndex = 0;
@@ -34,6 +35,7 @@ function startQuiz() {
   showQuestion();
 }
 
+//showQuestion
 function showQuestion() {
   console.log("showQuestion started");
 
@@ -59,6 +61,8 @@ function showQuestion() {
   });
 }
 
+
+//resetState
 function resetState() {
   nextButton.style.visibility = "hidden";
   while (answerButton.firstChild) {
@@ -66,12 +70,15 @@ function resetState() {
   }
 }
 
+//selectAnswer 
 function selectAnswer(e) {
   const selectedBtn = e.target;
 
   //give correct and incorrect class to clicked/selected btn based on dataset
   if (selectedBtn.dataset.correct === "true") {
     selectedBtn.classList.add("correct");
+    //increase score
+    score++;
   } else {
     selectedBtn.classList.add("incorrect");
   }
@@ -79,14 +86,40 @@ function selectAnswer(e) {
 
   Array.from(answerButton.children).forEach(element => {
     //show correct answer
-    if(button.dataset.correct === "true"){
-      button.classList.add("correct");
+    if(element.dataset.correct === "true"){
+      element.classList.add("correct");
     }
     //disable all selection after showing correct and incorrect
     element.disabled = true;
     
   });
+  console.log("array stops")
   nextButton.style.visibility = "visible";
 }
+
+function showScore(){
+  resetState();
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}`;
+  nextButton.innerHTML = "Start Again";
+  nextButton.style.visibility = "visible";
+
+}
+
+function handleNextButton(){
+  currentQuestionIndex++;
+  if(currentQuestionIndex < questions.length){
+    showQuestion();
+  }else{
+    showScore();
+  }
+}
+
+nextButton.addEventListener("click",  ()=>{
+  if(currentQuestionIndex < questions.length){
+    handleNextButton();
+  }else{
+    startQuiz();
+  }
+})
 
 startQuiz();
