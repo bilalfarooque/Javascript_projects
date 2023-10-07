@@ -12,6 +12,7 @@
     <div class="app-container">
         <h1>Simple Quiz App</h1>
         <div class="quiz">
+            <h2 id="questNum">Question 1 of 10</h2>
             <h2 id="question">Question goes here</h2>
             <div id="answer-btns">
                 <button class="btn">1</button>
@@ -20,6 +21,24 @@
                 <button class="btn">4</button>
             </div>
             <button id="next-btn">Next</button>
+        </div>
+
+        <div id="result">
+            <div id="outer">
+                <div id="inner">
+                    <div id="percent"></div>
+                </div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                   <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#03fb6e" />
+                      <stop offset="100%" stop-color="#9aeabc" />
+                   </linearGradient>
+                </defs>
+                <circle id="myCircle" cx="80" cy="80" r="70" stroke-linecap="round" />
+        </svg>
         </div>
     </div>
 
