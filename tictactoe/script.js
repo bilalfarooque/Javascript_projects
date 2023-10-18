@@ -71,6 +71,7 @@ const checkWin = () => {
       document.querySelector(".info").innerText =
         boxtext[e[0]].innerText + " Won";
       isgameover = true;
+      gameover.play();
       document.querySelector(
         ".line"
       ).style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`;
@@ -83,7 +84,7 @@ const checkWin = () => {
 };
 
 // Game Logic
-// music.play()
+
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach((element) => {
   let boxtext = element.querySelector(".boxtext");
@@ -91,7 +92,7 @@ Array.from(boxes).forEach((element) => {
     if (boxtext.innerText === "") {
       boxtext.innerText = turn;
       turn = changeTurn();
-      // audioTurn.play();
+      audioTurn.play();
       checkWin();
       if (!isgameover) {
         document.getElementsByClassName("info")[0].innerText =
