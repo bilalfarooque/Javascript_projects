@@ -223,7 +223,7 @@
   background-color: #ff5e9a;
   border-radius: 50%;
   box-shadow: 5px 5px 25px #ff5e9a;
-  transform: translateX(-50%);
+  transform: translateX(100%);
 }
 
 .switch-btn.active::before {
