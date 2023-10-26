@@ -19,11 +19,12 @@
 .todo-app {
   width: 100%;
   max-width: 600px;
+  min-height: 90vh;
   background: #ffff;
   border-radius: 15px;
   margin: 10px auto 20px;
   padding: 40px 30px 70px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.5),-5px -5px 15px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .todo-app h2 {
@@ -72,8 +73,8 @@
   cursor: pointer;
 }
 
-#add-btn:hover{
-    background: #48f8c9;
+#add-btn:hover {
+  background: #48f8c9;
 }
 
 /* list starts */
@@ -87,7 +88,7 @@ ul li {
   max-width: 100%;
   overflow-wrap: break-word;
   font-size: 14px;
-  padding: 10px 20px 12px 22px;
+  padding: 10px 20px 12px 35px;
   /* disable text to be selected */
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -95,14 +96,17 @@ ul li {
   cursor: pointer;
   position: relative;
   margin: 5px auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   letter-spacing: 0.04rem;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
 }
 
 ul li:before {
   content: "";
   position: absolute;
-  left: -5px;
+  left: 5px;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -123,8 +127,8 @@ ul li.checked {
 
 ul li span {
   position: absolute;
-  top: 5px;
-  right: -5px;
+  top: 10px;
+  right: 10px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -138,4 +142,72 @@ ul li span {
 
 ul li span:hover {
   background: #7a7a7a;
+}
+
+/* ul li button{
+  padding: 3px 7px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: rgb(95, 224, 95);
+} */
+
+
+@media screen and (min-width: 746px) {
+  .todo-app {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 10vh;
+  }
+
+  .todo-app h2 {
+    margin-bottom: 30px;
+    font-size: 45px;
+  }
+
+  .todo-app h2 img {
+    width: 60px;
+    margin-left: 20px;
+  }
+
+  #input-box::placeholder {
+    font-size: 24px;
+  }
+
+  #input-box {
+    font-size: 24px;
+    letter-spacing: 0.07em;
+  }
+
+  #add-btn {
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  ul li {
+    font-size: 24px;
+    padding-left: 60px;
+    margin: 25px 0px;
+  } 
+
+  ul li:before {
+    top: 8px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  ul li span {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 50px;
+    padding-top: 8px;
+  }
 }

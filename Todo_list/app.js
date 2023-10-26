@@ -10,9 +10,12 @@ addBtn.addEventListener("click", () => {
     li.innerHTML = inputBox.value;
     listBox.appendChild(li);
     // add close box
-    let span = document.createElement("span");
-    span.innerHTML = "\u00d7";
-    li.appendChild(span);
+    let deleteBtn = document.createElement("span");
+    deleteBtn.innerHTML = "\u00d7";
+    li.appendChild(deleteBtn);
+    // let editBtn = document.createElement("button");
+    // editBtn.innerText = "Edit";
+    // li.appendChild(editBtn);
   }
 
   //   clear the input
@@ -49,3 +52,4 @@ function showData(){
 }
 
 showData();
+
