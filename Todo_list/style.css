@@ -144,18 +144,24 @@ ul li span:hover {
   background: #7a7a7a;
 }
 
-/* ul li button{
-  padding: 3px 7px;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  font-size: 14px;
+ul li button{
+  padding: 2px 5px;
+  float: right;
+  margin-right: 16px;
+  font-size: 12px;
+  letter-spacing: 0.09em;
   border-radius: 5px;
   border: none;
   color: #fff;
   background-color: rgb(95, 224, 95);
-} */
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
 
+ul li button:hover{
+  background-color: #48f854;
+  color: #4d87e4;
+  
+}
 
 @media screen and (min-width: 746px) {
   .todo-app {
@@ -179,13 +185,16 @@ ul li span:hover {
   }
 
   #input-box {
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 0.07em;
   }
 
   #add-btn {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
+    padding: 16px 35px;
+    font-size: 20px;
+    font-weight: 700;
   }
 
   ul li {
@@ -205,9 +214,24 @@ ul li span:hover {
     position: absolute;
     top: 10px;
     right: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 50px;
-    padding-top: 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    padding-top: 4px;
+  }
+
+  ul li button{
+    padding: 5px 7px;
+    float: right;
+    margin-right: 45px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: rgb(95, 224, 95);
+  }
+
+  #input-box {
+    padding: 10px 15px;
   }
 }
