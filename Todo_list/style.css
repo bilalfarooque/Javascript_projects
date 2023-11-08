@@ -163,6 +163,35 @@ ul li button:hover{
   
 }
 
+.clearBtn{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: all .3s ease-in-out;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.clearBtn button{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0783ff;
+  color: white;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.clearBtn button:active{
+  transform: scale(0.9);
+}
+
 @media screen and (min-width: 746px) {
   .todo-app {
     width: 100%;
@@ -234,4 +263,10 @@ ul li button:hover{
   #input-box {
     padding: 10px 15px;
   }
+
+  .clearBtn button{
+  padding: 5px 15px;
+  font-size: 18px;
+}
+
 }

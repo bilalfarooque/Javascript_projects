@@ -27,7 +27,6 @@ addBtn.addEventListener("click", () => {
   inputBox.value = "";
 
   //save data
-
   saveData();
 });
 
@@ -60,6 +59,14 @@ listBox.addEventListener(
   },
   false
 );
+
+function removeAll(){
+  while (listBox.firstChild){
+    listBox.removeChild(listBox.lastChild);
+  }
+  saveData()
+}
+
 
 //saving data to avoid lost on reload
 function saveData() {
