@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Dice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="popup" id="popup">
+        <h2>GAME OVER</h2>
+        <h1 id="winner"></h1>
+      
+        <button type="button" class="ok"  onclick="closePopUp()">OK</button>
+    </div>
+    <div class="popup" id="popup2">
+        <h2>Enter Player 1 Name</h2>
+        <input type="text" name="name" id="nameOfPlayer1">
+      
+        <button type="button" class="ok"  onclick="nameSubmit()">Submit</button>
+    </div>
+    <div class="popup" id="popup3">
+        <h2>Enter Player 2 Name</h2>
+        <input type="text" name="name" id="nameOfPlayer2">
+      
+        <button type="button" class="ok"  onclick="nameSubmit()">Submit</button>
+    </div>
+
+    <div class="container">
+
+        <div class="buttons">
+
+            <div class="game" onclick="newGame()">
+                <img src="./assets/refresh.png" alt="New Game">
+                <p>NEW GAME</p>
+            </div>
+
+            <div class="diceCont">
+                <img id="dice" src="./assets/1.png" alt="Dice">
+            </div>
+
+            <div class="rollDiceCont" id="rollDiceBtn" onclick="rollDice()" >
+                <img src="./assets/casino.png" alt="diceRoller">
+                <p  >ROLL DICE!</p>
+            </div>
+
+            <div class="holdCont" id="holdDiceBtn" onclick="holdDice()" >
+                <img src="./assets/hold.png" alt="Hold">
+                <p >HOLD TURN</p>
+            </div>
+        </div>
+
+
+        <div id="player1">
+            <h2 class="playerName">PLAYER 1</h2>
+            <h1 id="score1" class="score">0</h1>
+
+            <div class="current" id="cur1">
+                <h3>CURRENT</h3>
+                <p id="roll1" class="curRoll">0</p>
+            </div>
+        </div>
+        <div id="player2">
+            <h2 class="playerName">PLAYER 2</h2>
+            <h1 id="score2" class="score">0</h1>
+
+            <div class="current" id="cur2">
+                <h3>CURRENT</h3>
+                <p id="roll2" class="curRoll">0</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
