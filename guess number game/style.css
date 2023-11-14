@@ -163,7 +163,8 @@ body {
   }
 
   #pop {
-    min-width: 80px;
+    min-width: 120px;
+    line-height: 16px;
     margin: 4px;
     padding: 2px 4px;
   }
