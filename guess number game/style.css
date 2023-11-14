@@ -12,12 +12,15 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   height: 80vh;
   margin: 60px auto;
   background-color: black;
   color: white;
-  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .topBar {
@@ -30,12 +33,36 @@ body {
   margin: 20px;
   background-color: white;
   color: black;
-  padding: 10px 10px;
+  padding: 20px 50px;
+
+}
+
+.animateOnChange {
+  animation: myAnim2 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim2 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .topBar p {
   margin: 10px;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.001em;
 }
 
@@ -47,34 +74,20 @@ body {
 #num {
   background-color: white;
   color: black;
-  width: 120px;
-  padding: 40px;
-  font-size: 44px;
+  width: 200px;
+  padding: 30px;
+  font-size: 60px;
   text-align: center;
-  z-index: 1;
   position: relative;
-
 }
 
-#num::before{
-  content: "";
-  position: absolute;
-  top: 50%;
-  left:0;
-  right: 0;
-  transform: translateX(-50%);
-  background-color: #fff;
-  height: 10px;
-  width: 100vw;
-  z-index: -1;
-
+.title {
+  font-size: 36px;
 }
-
-
 
 .check-container {
   margin: 60px auto;
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,26 +98,31 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  width: 50%;
 }
 
 #guessInput {
-  width: 150px;
+  width: 200px;
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 20px 0px;
   border: 2px solid white;
   outline: none;
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
 }
 
 #checkBtn {
-  padding: 10px;
+  padding: 20px;
   background-color: white;
   color: black;
   cursor: pointer;
   margin-top: 25px;
+}
+
+#checkBtn:hover {
+  background-color: #505050;
+  color: #ffff;
 }
 
 .display {
@@ -112,6 +130,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  width: 50%;
 }
 
 #process {
@@ -145,13 +164,13 @@ body {
 
   #pop {
     min-width: 80px;
-    margin: 10px;
+    margin: 4px;
     padding: 2px 4px;
   }
   .topBar p {
-    margin: 12px;
-    font-size: 10px;
-    letter-spacing: 0;
+    margin: 6px;
+    font-size: 8px;
+    letter-spacing: -0.1em;
   }
 
   #pop {
@@ -221,20 +240,26 @@ body {
   }
 
   #process {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 50px;
     width: 100px;
+    line-height: 18px;
   }
 
   #result {
     margin-bottom: 10px;
+  }
+
+  #result,
+  #highscore {
+    font-size: 12px;
   }
 }
 
 @media screen and (min-width: 521px) and (max-width: 820px) {
   .container {
     width: 80%;
-    min-width: 320px;
+    min-width: 450px;
     height: 100vh;
     margin: 10px auto;
     text-align: center;
