@@ -24,7 +24,6 @@ body {
   background-color: transparent;
   color: rgb(51, 51, 51);
   position: relative;
-
 }
 
 #player1 {
@@ -54,14 +53,13 @@ body {
 .score {
   color: #b1282f;
   font-size: 66px;
-
 }
 
 .current {
-  padding: 25px;
+  padding: 5px 20px;
   border-radius: 10px;
   border: none;
-  width: 200px;
+  width: 160px;
   color: #fff;
   margin: 400px auto 100px;
 }
@@ -72,11 +70,11 @@ body {
 
 #cur1 {
   background-color: rgb(157, 46, 46);
-  padding: 15px;
+
 }
 #cur2 {
   background-color: rgb(190, 74, 74);
-  padding: 15px;
+ 
 }
 
 .curRoll {
@@ -93,6 +91,7 @@ body {
   position: absolute;
   top: 100px;
   left: 50%;
+  width: 200px;
   transform: translateX(-50%);
 }
 
@@ -111,7 +110,6 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 220px;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px 25px;
   border-radius: 35px;
@@ -120,9 +118,12 @@ body {
   color: rgb(40, 40, 40, 0.5);
   cursor: pointer;
   transition: all 0.5s ease;
+  gap: 8px;
 }
 
-.game:hover,.rollDiceCont:hover,.holdCont:hover {
+.game:hover,
+.rollDiceCont:hover,
+.holdCont:hover {
   color: black;
   background-color: rgba(255, 255, 255, 1);
 }
@@ -141,85 +142,224 @@ body {
   }
 }
 
-/* CELEBRATION */
-
-.popup{
-  width: 30%;
+.popup {
+  width: 40%;
   background-color: #fff;
   border-radius: 6px;
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%,-50%) scale(0.1);
+  transform: translate(-50%, -50%) scale(0.1);
   text-align: center;
-  padding: 10px 30px 20px ;
+  padding: 10px 30px 20px;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
   z-index: 1;
 }
 
-.open-popup{
+.open-popup {
   visibility: visible;
   top: 40%;
-  transform: translate(-50%,-50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.popup img{
+.popup img {
   width: 100px;
   margin-top: -50px;
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.popup h1{
+.popup h1 {
   font-size: 38px;
   font-weight: 500;
   margin: 30px 0 10px;
-
 }
-.popup h4{
+.popup h4 {
   width: 80%;
   line-height: 25px;
   margin: auto;
   letter-spacing: 0.1em;
 }
 
-.ok{
-  width: 80%;
+.ok {
+  display: block;
+  margin: auto;
+  width: 40%;
   margin-top: 20px;
   padding: 10px 0px;
   background-color: #6fd649;
-  border:none;
+  border: none;
   border-radius: 7px;
   outline: none;
-  cursor:pointer;
+  cursor: pointer;
   font-size: 18px;
+  font-weight: 600;
   color: #ffff;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.4),
+    -2px -2px 5px rgba(255, 255, 255, 0.2);
 }
 
-#popup2,#popup3{
+.ok:hover {
+  background-color: white;
+  color: #6fd649;
+}
+
+#popup2,
+#popup3 {
   background-color: #6c3175d0;
   color: #fcfcfc;
 }
 
-
-
-.popup h2{
+.popup h2 {
   margin-top: 20px;
 }
 
-.popup input[type=text]{
+.popup input[type="text"] {
+  display: block;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 10px;
+  padding: 5px;
   font-size: 24px;
-  margin: 10px 0 40px;
+  margin: 20px auto 40px;
   color: rgb(156, 24, 24);
   font-weight: 600;
   letter-spacing: 0.01em;
   border-radius: 10px;
   border: none;
   outline: none;
+  width: 320px;
+}
+
+/* for medium screens */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    width: 75%;
+    margin: 55px auto;
+    height: 80vh;
+  }
+
+  .game,
+  .dicCount,
+  .rollDiceCont,
+  .holdCont {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px 15px; 
+  }
+
+  .buttons img {
+    width: 25px;
+  }
+
+  .playerName {
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 28px;
+  }
+
+  .score{
+    font-size: 56px;
+  }
+
+  .popup input[type="text"] {
+    padding: 5px;
+    font-size: 18px;
+    width: 200px;
+  }
+
+  .current {
+    padding: 16px 8px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    width: 120px;
+    color: #fff;
+    margin: 200px auto 100px;
+  }
+  
+  .curRoll {
+    font-size: 20px;
+    margin: 15px 0;
+  }
+}
+
+/* mobiles */
+@media screen and (max-width: 767px) {
+
+  .container {
+    width: 90%;
+    margin: 12px auto;
+    height: 85vh;
+  }
+
+  .game,
+  .dicCount,
+  .rollDiceCont,
+  .holdCont {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px 15px; 
+  }
+
+  .buttons img {
+    width: 25px;
+  }
+
+  .playerName {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .score{
+    font-size: 36px;
+  }
+
+  .popup{
+    width: 70%;
+  }
+
+  .popup h2{
+    font-size: 18px;
+  }
+
+  .popup input[type="text"] {
+    padding: 6px;
+    font-size: 14px;
+    width: 190px;
+  }
+
+  .current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 12px 25px;
+    font-size: 12px;
+    border-radius: 10px;
+    width: 100px;
+    margin: 320px auto 100px;
+  }
+  
+  .curRoll {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .buttons {
+    height: 50%;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    width: 200px;
+    transform: translateX(-50%);
+  }
+
+  .buttons img {
+    width: 22px;
+  }
+  
+  #dice {
+    width: 80px;
+  }
 }

@@ -41,13 +41,13 @@ const turnCheck = () => {
   if (player2Turn) {
     player2.style.backgroundColor = "rgba(232, 210, 210, 0.77)";
     player1.style.backgroundColor = "rgba(210, 144, 144, 0.77)";
-    player1.childNodes[1].style.fontSize = "36px";
-    player2.childNodes[1].style.fontSize = "55px";
+    player1.childNodes[1].style.transform = "scale(1)";
+    player2.childNodes[1].style.transform = "scale(1.2)";
   } else {
     player1.style.backgroundColor = "rgba(232, 210, 210, 0.77)";
     player2.style.backgroundColor = "rgba(210, 144, 144, 0.77)";
-    player2.childNodes[1].style.fontSize = "36px";
-    player1.childNodes[1].style.fontSize = "55px";
+    player2.childNodes[1].style.transform = "scale(1)";
+    player1.childNodes[1].style.transform = "scale(1.2)";
   }
 };
 
