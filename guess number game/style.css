@@ -41,6 +41,8 @@ body {
   animation: myAnim2 1s ease 0s 1 normal forwards;
 }
 
+
+
 @keyframes myAnim2 {
   0%,
   50%,
