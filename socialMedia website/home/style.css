@@ -7,12 +7,27 @@
   font-family: "poppins", sans-serif;
 }
 
+:root {
+    --body-color: #efefef;
+    --nav-color: #0866ff;
+    --bg-color: #fff;
+}
+
+.dark-theme{
+    --body-color: #121212;
+    --nav-color: #212121;
+    --bg-color: #121212;
+
+
+}
+
 body {
-  background-color: #efefef;
+  background-color: var(--body-color);
+  transition: background-color 0.3s;
 }
 
 nav {
-  background-color: #0866ff;
+  background-color: var(--nav-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,17 +120,16 @@ nav #logo {
   top: 130px;
   align-self: flex-start;
   padding: 10px;
-  background-color: #ffff;
+  background-color: var(--bg-color);
   padding: 20px;
   border-radius: 5px;
 }
 .right-sidebar {
   flex-basis: 25%;
-  background-color: #cbdffa;
   position: sticky;
   top: 130px;
   align-self: flex-start;
-  background-color: #ffff;
+  background-color: var(--bg-color);
   padding: 20px;
   border-radius: 5px;
   color: #626262;
@@ -314,7 +328,7 @@ nav #logo {
 
 .write-post-container {
   width: 100%;
-  background-color: #ffff;
+  background-color: var(--bg-color);
   border-radius: 4px;
   padding: 20px;
   color: #626262;
@@ -386,7 +400,7 @@ nav #logo {
   margin: 20px 0;
   padding: 20px;
   border-radius: 5px;
-  background-color: #ffff;
+  background-color: var(--bg-color);
   color: #626262;
 }
 
@@ -430,11 +444,11 @@ nav #logo {
   position: absolute;
   width: 90%;
   max-width: 450px;
-  background-color: #ffff;
+  background-color: var(--bg-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   overflow: hidden;
-  top: 118%;
+  top: 99%;
   right: 6%;
   max-height: 0;
   transition: maxheight 0.3s;
@@ -446,10 +460,11 @@ nav #logo {
 
 .settings-menu-inner {
     padding: 20px;
+    color: #626262;
 }
 
 .user-profile a {
-  color: #0866ff;
+  color: #1876f2;
   text-decoration: none;
 }
 
@@ -481,9 +496,37 @@ nav #logo {
   text-decoration: none;
   color: #626262;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .settings-links a img {
   width: 10px;
   margin-left: 30px;
+}
+
+#dark-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ccc;
+    width: 45px;
+    border-radius: 15px;
+    padding: 2px 3px;
+    cursor: pointer;
+    display: flex;
+    transition: padding-left 0.5s, background-color 0.5s; 
+}
+
+#dark-btn span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+
+}
+
+#dark-btn.dark-btn-on{
+    padding-left: 23px;
+    background-color: #000;
 }
