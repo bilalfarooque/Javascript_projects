@@ -312,119 +312,178 @@ nav #logo {
 
 /* write post  */
 
-.write-post-container{
-    width: 100%;
-    background-color: #ffff;
-    border-radius: 4px;
+.write-post-container {
+  width: 100%;
+  background-color: #ffff;
+  border-radius: 4px;
+  padding: 20px;
+  color: #626262;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img {
+  width: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-profile small {
+  font-size: 12px;
+}
+
+.post-user img {
+  align-self: center;
+  width: 10px;
+  margin-left: 4px;
+}
+
+#post {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #626262;
+}
+
+.post-input-container {
+  padding-left: 55px;
+  padding-top: 20px;
+}
+
+.post-input-container textarea {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+
+  resize: none;
+}
+
+.add-post-links {
+  display: flex;
+  margin-top: 15px;
+}
+
+.add-post-links img {
+  width: 25px;
+}
+
+.add-post-links a {
+  text-decoration: none;
+  color: #626262;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 15px;
+}
+
+.post-container {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffff;
+  color: #626262;
+}
+
+.post-user span {
+  font-size: 14px;
+  color: #9f9f9f;
+}
+
+.post-text {
+  margin: 15px 0;
+  color: #9a9a9a;
+}
+
+#post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.activity-icons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.activity-icons img {
+  width: 22px;
+  margin-right: 7px;
+}
+
+.activity-icons span {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.settings-menu {
+  position: absolute;
+  width: 90%;
+  max-width: 450px;
+  background-color: #ffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+  top: 118%;
+  right: 6%;
+  max-height: 0;
+  transition: maxheight 0.3s;
+}
+
+.settings-menu-display {
+    max-height: 500px;
+}
+
+.settings-menu-inner {
     padding: 20px;
-    color: #626262;
 }
 
-.add-post{
-    display: flex;
-    align-items: center;
+.user-profile a {
+  color: #0866ff;
+  text-decoration: none;
 }
 
-.add-post img{
-    width: 45px;
-    border-radius: 50%;
-    margin-right: 10px;
+.settings-menu hr {
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  color: #9a9a9a;
+  outline: none;
 }
 
-.add-post small{
-    font-size: 12px;
+.settings-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 15px 0;
 }
 
-.post-user img{
-    align-self: center;
-    width: 10px;
-    margin-left: 4px;
+.settings-icons {
+  width: 50px;
+  height: 50px;
 }
 
-
-
-#post{
-    width: 100%;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #626262;
+.settings-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  text-decoration: none;
+  color: #626262;
+  font-size: 18px;
 }
 
-.post-input-container{
-    padding-left: 55px;
-    padding-top: 20px;
-}
-
-.post-input-container textarea{
-    width: 100%;
-    border: 0;
-    outline: 0;
-    border-bottom: 1px solid #ccc;
-    background: transparent;
-
-    resize: none;
-}
-
-.add-post-links{
-    display: flex;
-    margin-top: 15px;
-}
-
-.add-post-links img{
-    width: 25px;
-    
-}
-
-.add-post-links a{
-    text-decoration: none;
-    color: #626262;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-right: 15px;
-}
-
-.post-container{
-    width: 100%;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #ffff;
-    color: #626262;
-}
-
-.post-user span{
-    font-size: 14px;
-    color: #9f9f9f;
-}
-
-.post-text{
-    margin: 15px 0;
-    color: #9a9a9a;
-}
-
-#post-image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.activity-icons{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.activity-icons img{
-    width: 22px;
-    margin-right: 7px;
-}
-
-.activity-icons span{
-    display: flex;
-    align-items: center;
-    font-size: 18px;
+.settings-links a img {
+  width: 10px;
+  margin-left: 30px;
 }
