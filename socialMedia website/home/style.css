@@ -472,8 +472,9 @@ nav #logo {
   width: 100%;
   height: 1px;
   margin: 20px 0;
-  color: #9a9a9a;
+  background-color: #9a9a9a;
   outline: none;
+  border: none;
 }
 
 .settings-links {
