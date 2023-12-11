@@ -1,42 +1,75 @@
-const email = document.getElementById('email')
-const password = document.getElementById('password')
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const popUpHtml = document.getElementById("popup")
 
-const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
-
-if(loggedInUser) window.location.href = '../home/index.html'
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
 
+if (loggedInUser) window.location.href = "../home/index.html";
 
 const loginHandler = () => {
+  const users = JSON.parse(localStorage.getItem("users"));
 
-    const users = JSON.parse(localStorage.getItem('users'))
+  //checking fields
+  if (!email.value || !password.value){
+    popUpHtml.innerHTML = ""
+    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+    <h2 style = "color:#DE2413">Oops!</h2>
+    <p>Please fill all fields</p>
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
+    return
+  } ;
 
-    //checking fields
-    if (!email.value || !password.value) return alert('Saari fields likh bhai')
-    //checking length
+  if (!users){
+    popUpHtml.innerHTML = ""
+    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+    <h2 style = "color:#DE2413">Oops!</h2>
+    <p>Users not created</p>
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
+    return
+  } ;
 
-    if (password.value.length < 8) return alert('password length should be atleast 8 characters')
+  const foundUser = users.find((user) => {
+    if (user.email === email.value) return user;
+  });
 
-    if (!users) return alert("Sorry no user found")
-
-    const foundUser = users.find(user => {
-        if (user.email === email.value) return user
-    });
-
-    if (!foundUser) return alert('No user found')
-
-    if (foundUser.password !== password.value) return alert("Invalid Credentials")
-
-    alert("Login Successfully, diverting you to the home page")
-
-    localStorage.setItem('loggedInUser', JSON.stringify(foundUser))
-
-    setTimeout(() => {
-        window.location.href = '../home/index.html'
-    }, 2000)
+  if (!foundUser){
+    popUpHtml.innerHTML = ""
+    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+    <h2 style = "color:#DE2413">Oops!</h2>
+    <p>User not created</p>
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
+    return
+  } ;
 
 
+  if (foundUser.password !== password.value){
+    popUpHtml.innerHTML = ""
+    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+    <h2 style = "color:#DE2413">Oops!</h2>
+    <p>Incorrect Password</p>
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
+    return
+  } ;
+;
+
+  console.log("Login Successfully");
+
+  localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+
+  setTimeout(() => {
+    window.location.href = "../home/index.html";
+  }, 2000);
+};
 
 
+//pop-up
+let popup = document.getElementById("popup");
 
+function openPopUp() {
+  popup.classList.add("open-popup");
+}
+
+function closePopUp() {
+  popup.classList.remove("open-popup");
 }

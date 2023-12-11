@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Signup</title>
+    <title>login</title>
 </head>
 
 <body>
+
+    <div class="popup" id="popup">
+        <img src="../images/Successfully Done.gif" alt="tick">
+        <h2>Welcome</h2>
+        <p>Login Successfully</p>
+        <button type="button" id="ok" onclick="closePopUp()">OK</button>
+    </div>
 
     <div class="container">
 
@@ -25,7 +32,7 @@
             <div class="login">
                 <input type="email" name="" id="email" placeholder="Email address">
                 <input type="password" id="password" placeholder="Password">
-                <button onclick="loginHandler()">Log in</button>
+                <button onclick="loginHandler(); openPopUp();">Log in</button>
                 <a href="../forgetpassword/index.html">Forgotten password?</a>
 
                 <hr>

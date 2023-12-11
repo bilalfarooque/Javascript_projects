@@ -10,7 +10,7 @@ body{
     font-family: sans-serif;
 }
 
-.container{
+.pop-container{
     display: flex;
     justify-content: center;
     align-items: center;

@@ -7,3 +7,173 @@
   font-family: "poppins", sans-serif;
 }
 
+body {
+  background-color: #626262;
+  color: #000;
+}
+
+/* popup starts */
+
+.popup {
+  width: 30%;
+  background-color: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: 10px 30px 20px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.popup {
+  width: 30%;
+  background-color: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 10px 30px 20px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  width: 100px;
+  border: none;
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+.popup p {
+  width: 80%;
+  line-height: 25px;
+  margin: auto;
+  letter-spacing: 0.1em;
+}
+
+#ok {
+  width: 80%;
+  margin-top: 20px;
+  padding: 10px 0px;
+  background-color: #6fd649;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* popup ends */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-container {
+  margin-top: 5%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.4);
+}
+
+.signup-container p {
+  color: #626262;
+}
+
+.signup-container hr {
+  width: 100%;
+  height: 1px;
+  margin: 10px 0 40px;
+  background-color: #9a9a9a;
+  outline: none;
+  border: none;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fullName,
+.passwords,
+.dob {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  min-width: 100%;
+}
+
+.signup input,
+.signup button {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.dob input {
+  width: 30px;
+}
+
+#cPassword,
+#lastName {
+  margin-left: 10px;
+}
+
+.signup a {
+  color: #0866ff;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.signup button {
+  width: 100%;
+  color: #fff;
+  background-color: #0866ff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+}
+
+.login-redirect {
+  margin: 30px 0;
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.login-redirect a {
+  text-decoration: none;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 15px 35px;
+  background-color: #47b33b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}
