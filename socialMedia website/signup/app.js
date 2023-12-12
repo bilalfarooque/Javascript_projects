@@ -4,74 +4,109 @@ const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const cPassword = document.getElementById("cPassword");
-const dob = document.getElementById("dob");
-const popUpHtml = document.getElementById("popup")
+const date = document.getElementById("date");
+const month = document.getElementById("month")
+const year = document.getElementById("year");
+let combinedDate;
+
+const popUpHtml = document.getElementById("popup");
 
 const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
 //checking if user is already logged in
 if (loggedInUser) window.location.href = "../home/index.html";
 
+// Create options from 1 to 31
+for (let i = 1; i <= 31; i++) {
+  const option = document.createElement("option");
+  option.value = i;
+  option.text = i;
+  date.add(option);
+}
+
+// Create options from 1900 to 2024
+for (let i = 2024; i >= 1910; i--) {
+  const option = document.createElement("option");
+  option.value = i;
+  option.text = i;
+  year.add(option);
+}
+
+function combineDate() {
+  combinedDate = date.value + month.value + year.value;
+  console.log(combinedDate);
+}
+
 const signupHandler = () => {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   console.log(users, "-====>>> users");
 
-//   checking fields (Required data)
-  if (!userName.value || !email.value || !password.value || !cPassword.value){
-    popUpHtml.innerHTML = ""
-    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+  //   checking fields (Required data)
+  if (
+    !userName.value ||
+    !email.value ||
+    !password.value ||
+    !cPassword.value ||
+    !firstName.value ||
+    !lastName.value ||
+    !date.value ||
+    !month.value ||
+    !year.value
+  ) {
+    popUpHtml.innerHTML = "";
+    popUpHtml.innerHTML = `<img src="../images/Close.gif" alt="tick">
     <h2 style = "color:#DE2413">Oops!</h2>
     <p>Please fill all fields</p>
-    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`;
 
-    return
-  } 
+    return;
+  }
 
   //check password length
-  if (password.value.length < 8){
-    popUpHtml.innerHTML = ""
-    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+  if (password.value.length < 8) {
+    popUpHtml.innerHTML = "";
+    popUpHtml.innerHTML = `<img src="../images/Close.gif" alt="tick">
     <h2 style = "color:#DE2413">Oops!</h2>
     <p>Password length should be alteast 8 characters</p>
-    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
-    return
-  } 
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`;
+    return;
+  }
 
   //matching password and cPassword
-  if (password.value != cPassword.value){
-    popUpHtml.innerHTML = ""
-    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+  if (password.value != cPassword.value) {
+    popUpHtml.innerHTML = "";
+    popUpHtml.innerHTML = `<img src="../images/Close.gif" alt="tick">
     <h2 style = "color:#DE2413">Oops!</h2>
     <p>Confirm password should be same as password</p>
-    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
-    return
-  } ;
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`;
+    return;
+  }
 
   const userNameFound = users.find((user) => {
     if (user.userName === userName.value) return user;
   });
 
-  if (userNameFound){
-    popUpHtml.innerHTML = ""
-    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+  if (userNameFound) {
+    popUpHtml.innerHTML = "";
+    popUpHtml.innerHTML = `<img src="../images/Close.gif" alt="tick">
     <h2 style = "color:#DE2413">Oops!</h2>
     <p>Username already taken</p>
-    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
-    return
-  } ;
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`;
+    return;
+  }
 
   const userEmailFound = users.find((user) => {
     if (user.email === email.value) return user;
   });
 
-  if (userEmailFound){
-    popUpHtml.innerHTML = ""
-    popUpHtml.innerHTML =  `<img src="../images/Close.gif" alt="tick">
+  if (userEmailFound) {
+    popUpHtml.innerHTML = "";
+    popUpHtml.innerHTML = `<img src="../images/Close.gif" alt="tick">
     <h2 style = "color:#DE2413">Oops!</h2>
     <p>Email already used</p>
-    <button type="button" id="ok" onclick="closePopUp()">OK</button>`
-    return
-  } ;
+    <button type="button" id="ok" onclick="closePopUp()">OK</button>`;
+    return;
+  }
 
   const user = {
     firstName: firstName.value,
@@ -80,6 +115,7 @@ const signupHandler = () => {
     email: email.value,
     password: password.value,
     cPassword: cPassword.value,
+    dob: combinedDate
   };
 
   users.push(user);
