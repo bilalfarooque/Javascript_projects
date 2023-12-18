@@ -107,6 +107,101 @@ nav #logo {
   width: 70%;
 }
 
+/* settings starts */
+.settings-menu {
+  position: absolute;
+  width: 90%;
+  max-width: 450px;
+  background-color: var(--bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+  top: 99%;
+  right: 6%;
+  max-height: 0;
+  transition: maxheight 0.3s;
+}
+
+.settings-menu-display {
+    max-height: 500px;
+}
+
+.settings-menu-inner {
+    padding: 20px;
+    color: #626262;
+}
+
+.user-profile a {
+  color: #1876f2;
+  text-decoration: none;
+}
+
+.settings-menu hr {
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  background-color: #9a9a9a;
+  outline: none;
+  border: none;
+}
+
+.settings-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.settings-icons {
+  width: 50px;
+  height: 50px;
+}
+
+.settings-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  text-decoration: none;
+  color: #626262;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.settings-links a img {
+  width: 10px;
+  margin-left: 30px;
+}
+
+#dark-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ccc;
+    width: 45px;
+    border-radius: 15px;
+    padding: 2px 3px;
+    cursor: pointer;
+    display: flex;
+    transition: padding-left 0.5s, background-color 0.5s; 
+}
+
+#dark-btn span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+
+}
+
+#dark-btn.dark-btn-on{
+    padding-left: 23px;
+    background-color: #000;
+}
+
+/* settings ends */
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -440,94 +535,3 @@ nav #logo {
   font-size: 18px;
 }
 
-.settings-menu {
-  position: absolute;
-  width: 90%;
-  max-width: 450px;
-  background-color: var(--bg-color);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  overflow: hidden;
-  top: 99%;
-  right: 6%;
-  max-height: 0;
-  transition: maxheight 0.3s;
-}
-
-.settings-menu-display {
-    max-height: 500px;
-}
-
-.settings-menu-inner {
-    padding: 20px;
-    color: #626262;
-}
-
-.user-profile a {
-  color: #1876f2;
-  text-decoration: none;
-}
-
-.settings-menu hr {
-  width: 100%;
-  height: 1px;
-  margin: 20px 0;
-  background-color: #9a9a9a;
-  outline: none;
-  border: none;
-}
-
-.settings-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin: 15px 0;
-}
-
-.settings-icons {
-  width: 50px;
-  height: 50px;
-}
-
-.settings-links a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex: 1;
-  text-decoration: none;
-  color: #626262;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.settings-links a img {
-  width: 10px;
-  margin-left: 30px;
-}
-
-#dark-btn{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #ccc;
-    width: 45px;
-    border-radius: 15px;
-    padding: 2px 3px;
-    cursor: pointer;
-    display: flex;
-    transition: padding-left 0.5s, background-color 0.5s; 
-}
-
-#dark-btn span{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background-color: #fff;
-    border-radius: 50%;
-
-}
-
-#dark-btn.dark-btn-on{
-    padding-left: 23px;
-    background-color: #000;
-}

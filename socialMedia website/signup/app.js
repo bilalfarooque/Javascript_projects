@@ -18,9 +18,10 @@ if (loggedInUser) window.location.href = "../home/index.html";
 
 // Create options from 1 to 31
 for (let i = 1; i <= 31; i++) {
+  let loopvalue = i < 10 ? '0' + i : i;
   const option = document.createElement("option");
-  option.value = i;
-  option.text = i;
+  option.value = loopvalue;
+  option.text = loopvalue;
   date.add(option);
 }
 
@@ -32,16 +33,18 @@ for (let i = 2024; i >= 1910; i--) {
   year.add(option);
 }
 
-function combineDate() {
-  combinedDate = date.value + month.value + year.value;
-  console.log(combinedDate);
-}
+
 
 const signupHandler = () => {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   console.log(users, "-====>>> users");
 
-  //   checking fields (Required data)
+  function combineDate() {
+    combinedDate = `${year.value}${month.value}${date.value}`;
+    console.log(combinedDate);
+  }
+
+  // checking fields (Required data)
   if (
     !userName.value ||
     !email.value ||
@@ -107,15 +110,17 @@ const signupHandler = () => {
     <button type="button" id="ok" onclick="closePopUp()">OK</button>`;
     return;
   }
-
+  combineDate();
+  console.log(combinedDate)
   const user = {
+    id: Date.now(),
     firstName: firstName.value,
     lastName: lastName.value,
     userName: userName.value,
+    dob: combinedDate,
     email: email.value,
     password: password.value,
-    cPassword: cPassword.value,
-    dob: combinedDate
+    cPassword: cPassword.value
   };
 
   users.push(user);

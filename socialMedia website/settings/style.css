@@ -1,0 +1,424 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+}
+
+:root {
+  --body-color: #efefef;
+  --nav-color: #0866ff;
+  --bg-color: #fff;
+}
+
+.dark-theme {
+  --body-color: #121212;
+  --nav-color: #212121;
+  --bg-color: #121212;
+}
+
+body {
+  background-color: var(--body-color);
+  transition: background-color 0.3s;
+}
+
+nav {
+  background-color: var(--nav-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 10px 5%;
+}
+
+nav #logo {
+  width: 180px;
+  margin: 5px 25px;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left ul {
+  width: 200px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-left ul li img {
+  width: 25px;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#profilePic {
+  width: 70px;
+  margin: 10px 20px;
+  border-radius: 50%;
+  border: 3px solid #efefef;
+  cursor: pointer;
+}
+
+.online {
+  position: relative;
+}
+
+.online::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ffff;
+  border-radius: 50%;
+  background-color: #41db51;
+  position: absolute;
+  top: 15%;
+  right: 20%;
+}
+.search-box {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #efefef;
+  border-radius: 20px;
+  padding: 0 5px;
+}
+
+#searchBox {
+  outline: none;
+  background-color: #efefef;
+  border: none;
+  padding: 15px;
+  width: 70%;
+}
+
+/* settings starts */
+.settings-menu {
+  position: absolute;
+  width: 90%;
+  max-width: 450px;
+  background-color: var(--bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+  top: 99%;
+  right: 6%;
+  max-height: 0;
+  transition: maxheight 0.3s;
+}
+
+.settings-menu-display {
+  max-height: 500px;
+}
+
+.settings-menu-inner {
+  padding: 20px;
+  color: #626262;
+}
+
+.user-profile a {
+  color: #1876f2;
+  text-decoration: none;
+}
+
+.settings-menu hr {
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  background-color: #9a9a9a;
+  outline: none;
+  border: none;
+}
+
+.settings-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.settings-icons {
+  width: 50px;
+  height: 50px;
+}
+
+.settings-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  text-decoration: none;
+  color: #626262;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.settings-links a img {
+  width: 10px;
+  margin-left: 30px;
+}
+
+#dark-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ccc;
+  width: 45px;
+  border-radius: 15px;
+  padding: 2px 3px;
+  cursor: pointer;
+  display: flex;
+  transition: padding-left 0.5s, background-color 0.5s;
+}
+
+#dark-btn span {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+#dark-btn.dark-btn-on {
+  padding-left: 23px;
+  background-color: #000;
+}
+
+/* settings ends */
+
+/* popup starts */
+
+.popup {
+  width: 30%;
+  background-color: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: 10px 30px 20px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.popup {
+  width: 30%;
+  background-color: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 10px 30px 20px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  width: 100px;
+  border: none;
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup p {
+  width: 80%;
+  line-height: 25px;
+  margin: auto;
+  letter-spacing: 0.1em;
+}
+
+#ok {
+  width: 80%;
+  margin-top: 20px;
+  padding: 10px 0px;
+  background-color: #47b33b;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* popup ends */
+
+.settingsPrivacy-container {
+  width: 88%;
+  height: 80vh;
+  /* min-width: 1250px; */
+  margin: auto;
+  margin-top: 1%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.settingsPrivacy-container h1 {
+  margin-bottom: 30px;
+  color: #626262;
+}
+
+.settingsPrivacy-container p {
+  color: #626262;
+}
+
+.settingsPrivacy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fullName,
+.passwords {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.gender {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settingsPrivacy input,
+.settingsPrivacy button {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.dobCont {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dob select {
+  margin: 10px 10px;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: #626262;
+  flex: 1;
+}
+
+.dob p {
+  min-width: 115px;
+  width: 130px;
+  font-size: 18px;
+
+}
+
+.dob {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 15px;
+}
+
+#firstNameInput,
+#lastNameInput,
+#phoneNumberInput,
+#countryInput {
+  margin-left: 10px;
+}
+
+.emailPhoneNum {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.gender {
+  font-size: 18px;
+  color: #626262;
+}
+/* Reset default radio button styles */
+
+.gender input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: none;
+}
+
+/* Style the custom radio button */
+.gender input[type="radio"] + label {
+  position: relative;
+  padding-left: 30px; /* Adjust the padding as needed */
+  cursor: pointer;
+  display: inline-block;
+  line-height: 24px; /* Adjust the line-height as needed */
+}
+
+/* Create the custom radio button design */
+.gender input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust the size of the custom radio button */
+  height: 20px; /* Adjust the size of the custom radio button */
+  background-color: #fff; /* Background color of the radio button */
+  border: 2px solid #007bff; /* Border color of the radio button */
+  border-radius: 50%; /* Make it a circle */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Style the custom radio button when checked */
+.gender input[type="radio"]:checked + label:before {
+  background-color: #007bff; /* Change the background color when checked */
+  border-color: #007bff; /* Change the border color when checked */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 350px;
+}
+
+.buttons button {
+  margin: 60px 15px 0;
+  color: #fff;
+  background-color: #0866ff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 22px;
+  border: none;
+}
