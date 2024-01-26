@@ -49,7 +49,7 @@
                     <img src="../images/profile-pic.png" alt="profile-pic">
                     <div class="post-user">
                         <h3>Alison</h3>
-                        <a href="">See your profile</a>
+                        <a href="../profile/index.html">See your profile</a>
                     </div>
                 </div>
                 <hr>
@@ -139,7 +139,7 @@
                     <div class="user-profile">
                         <img src="../images/profile-pic.png" alt="profile-pic">
                         <div class="post-user">
-                            <h3>Alison</h3>
+                            <h3 id="fullname">Alison</h3>
                             <small>Public<img src="../images/sort-down.png" alt="arrow"></small>
                         </div>
                     </div>
@@ -150,108 +150,45 @@
 
                         <div class="add-post-links">
                             <a href=""><img src="../images/live-video.png" alt="">Live Video</a>
-                            <a href=""><img src="../images/photo.png" alt="">Photo/Video</a>
+                            <a href=""><img onclick="imageOpenerHandler()" src="../images/photo.png" alt="">Photo/Video</a>
                             <a href=""><img src="../images/feeling.png" alt="">Feeling/Activity</a>
+                            <button onclick="postSubmitHandler()" id="submitBtn">POST</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- post -->
-                <div class="post-container">
-                    <div class="user-profile">
-                        <img src="../images/profile-pic.png" alt="profile-pic">
-                        <div class="post-user">
-                            <h3>Alison</h3>
-                            <span>June 24 2021, 13:40 pm</span>
+                <div class="allPosts">
+
+                    <div class="post-container">
+                        <div class="user-profile">
+                            <img src="../images/profile-pic.png" alt="profile-pic">
+                            <div class="post-user">
+                                <h3>Alison</h3>
+                                <span>June 24 2021, 13:40 pm</span>
+                            </div>
                         </div>
-                    </div>
+    
+                        <p class="post-text">I'm down now, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Doloremque ad fugit quam mollitia, facilis labore dolor eligendi ipsa molestiae nostrum error
+                            eum consectetur. Suscipit culpa quis, illum error quo quaerat!</p>
 
-                    <p class="post-text">I'm down now, Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Doloremque ad fugit quam mollitia, facilis labore dolor eligendi ipsa molestiae nostrum error
-                        eum consectetur. Suscipit culpa quis, illum error quo quaerat!</p>
+                            <div class="post-image-cont">
+                                <img src="../images/feed-image-1.png" alt="" id="post-image">
 
-                    <img src="../images/feed-image-1.png" alt="" id="post-image">
-
-                    <div class="post-row">
-                        <div class="activity-icons">
-                            <span><img src="../images/like-blue.png" alt="">120</span>
-                            <span><img src="../images/comments.png" alt="">10</span>
-                            <span><img src="../images/share.png" alt="">3</span>
+                            </div>
+    
+    
+                        <div class="post-row">
+                            <div class="activity-icons">
+                                <span><img src="../images/like-blue.png" alt="">120</span>
+                                <span><img src="../images/comments.png" alt="">10</span>
+                                <span><img src="../images/share.png" alt="">3</span>
+                            </div>
                         </div>
+    
                     </div>
-
-                </div>
-                <div class="post-container">
-                    <div class="add-post">
-                        <img src="../images/profile-pic.png" alt="profile-pic">
-                        <div class="post-user">
-                            <h3>Alison</h3>
-                            <span>June 24 2021, 13:40 pm</span>
-                        </div>
-                    </div>
-
-                    <p class="post-text">I'm down now, Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Doloremque ad fugit quam mollitia, facilis labore dolor eligendi ipsa molestiae nostrum error
-                        eum consectetur. Suscipit culpa quis, illum error quo quaerat!</p>
-
-                    <img src="../images/feed-image-1.png" alt="" id="post-image">
-
-                    <div class="post-row">
-                        <div class="activity-icons">
-                            <span><img src="../images/like-blue.png" alt="">120</span>
-                            <span><img src="../images/comments.png" alt="">10</span>
-                            <span><img src="../images/share.png" alt="">3</span>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="post-container">
-                    <div class="add-post">
-                        <img src="../images/profile-pic.png" alt="profile-pic">
-                        <div class="post-user">
-                            <h3>Alison</h3>
-                            <span>June 24 2021, 13:40 pm</span>
-                        </div>
-                    </div>
-
-                    <p class="post-text">I'm down now, Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Doloremque ad fugit quam mollitia, facilis labore dolor eligendi ipsa molestiae nostrum error
-                        eum consectetur. Suscipit culpa quis, illum error quo quaerat!</p>
-
-                    <img src="../images/feed-image-1.png" alt="" id="post-image">
-
-                    <div class="post-row">
-                        <div class="activity-icons">
-                            <span><img src="../images/like-blue.png" alt="">120</span>
-                            <span><img src="../images/comments.png" alt="">10</span>
-                            <span><img src="../images/share.png" alt="">3</span>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="post-container">
-                    <div class="add-post">
-                        <img src="../images/profile-pic.png" alt="profile-pic">
-                        <div class="post-user">
-                            <h3>Alison</h3>
-                            <span>June 24 2021, 13:40 pm</span>
-                        </div>
-                    </div>
-
-                    <p class="post-text">I'm down now, Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Doloremque ad fugit quam mollitia, facilis labore dolor eligendi ipsa molestiae nostrum error
-                        eum consectetur. Suscipit culpa quis, illum error quo quaerat!</p>
-
-                    <img src="../images/feed-image-1.png" alt="" id="post-image">
-
-                    <div class="post-row">
-                        <div class="activity-icons">
-                            <span><img src="../images/like-blue.png" alt="">120</span>
-                            <span><img src="../images/comments.png" alt="">10</span>
-                            <span><img src="../images/share.png" alt="">3</span>
-                        </div>
-                    </div>
-
+                  
                 </div>
 
 

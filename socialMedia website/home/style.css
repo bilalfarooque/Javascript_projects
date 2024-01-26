@@ -233,7 +233,7 @@ nav #logo {
 .main-container {
   flex-basis: 47%;
   align-self: flex-start;
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 .imp-links a,
@@ -468,7 +468,7 @@ nav #logo {
   outline: 0;
   border-bottom: 1px solid #ccc;
   background: transparent;
-
+  font-size: 20px;
   resize: none;
 }
 
@@ -490,6 +490,23 @@ nav #logo {
   margin-right: 15px;
 }
 
+#submitBtn{
+  margin-left: auto;
+  background-color: #0866ff;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 12px;
+}
+
+.allPosts{
+  
+  margin: 20px 0;
+}
+
 .post-container {
   width: 100%;
   margin: 20px 0;
@@ -507,6 +524,12 @@ nav #logo {
 .post-text {
   margin: 15px 0;
   color: #9a9a9a;
+}
+
+.post-image-cont{
+  width: 100% ;
+  height: 60%;
+  
 }
 
 #post-image {

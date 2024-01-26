@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav>
+        <div class="nav-left">
+            <a href="../home/index.html"> <img src="../images/logo.png" alt="logo" id="logo"></a>
+            <ul>
+                <li><img src="../images/notification.png" alt=""></li>
+                <li><img src="../images/inbox.png" alt=""></li>
+                <li><img src="../images/video.png" alt=""></li>
+
+            </ul>
+
+        </div>
+
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="../images/search.png" alt="">
+                <input type="text" name="search" id="searchBox" placeholder="Search">
+
+            </div>
+
+            <div class="nav-user-icon online" onclick="displaySettings()">
+                <img src="../images/profile-pic.png" alt="profile-pic" id="profilePic">
+
+            </div>
+        </div>
+
+        <!-- profile settings -->
+        <div class="settings-menu">
+            <div class="settings-menu-inner">
+
+                <div id="dark-btn">
+                    <span></span>
+                </div>
+
+                <div class="user-profile">
+                    <img src="../images/profile-pic.png" alt="profile-pic">
+                    <div class="post-user">
+                        <h3>Alison</h3>
+                        <a href="../profile/index.html">See your profile</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-profile">
+                    <img src="../images/feedback.png" alt="">
+                    <div class="post-user">
+                        <h3>Give Feedback</h3>
+                        <a href="">See your profile</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="settings-links">
+                    <img src="../images/setting.png" alt="" class="settings-icons">
+                    <a href="../settings/index.html">Settings & Privacy<img src="../images/arrow.png" alt="arrow"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="../images/help.png" alt="" class="settings-icons">
+                    <a href="">Help & Support<img src="../images/arrow.png" alt="arrow"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="../images/display.png" alt="" class="settings-icons">
+                    <a href="">Display and Accessbility<img src="../images/arrow.png" alt="arrow"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="../images/logout.png" alt="" class="settings-icons">
+                    <a href="../login/index.html" onclick="logoutHandler()">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="mainContainer">
+        <div class="header">
+            <div id="coverPicCont">
+                <img id="coverPic" src="../images/advertisement.png" alt="Cover pic">
+                <p id="ChangeCoverPicBtn">Edit Cover Photo</p>
+            </div>
+            <div id="profilePicCont">
+                <img id="profilePicCover" src="../images/profile.png" alt="User Profile Picture" />
+                <!-- <img id="camera" src="../images/icons8-camera-30.png" alt="camera photo"> -->
+                <div id="imageContainer">
+                    <label for="fileInput">
+                        <img id="previewImage" src="../images/icons8-camera-30.png" alt="Click to upload" />
+                    </label>
+                    <input type="file" id="fileInput" accept="image/*" onchange="previewImage()" />
+                </div>
+
+            </div>
+            <h3 id="fullNameHtml">Bilal Khatri</h3>
+
+        </div>
+        <div class="profileViewCont">
+            <div class="profileData">
+                <h3>Intro</h3>
+                <h4 id="aboutHtml">Alhamdulilah for everything</h4>
+                <h4 id="userNameHtml">johnaliy</h4>
+                <a id="editProfileBtn" href="../settings/index.html">Edit Profile</a>
+                <p id="phoneNumberHtml">032220322546</p>
+                <p id="emailHtml">bilalkhatri95@gmail.com</p>
+                <p id="dobHtml">24th October 1995</p>
+                <p id="hobbiesHtml">Cricket coding gaming</p>
+
+
+            </div>
+            <div class="profilePosts">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

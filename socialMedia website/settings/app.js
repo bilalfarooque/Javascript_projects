@@ -1,3 +1,20 @@
+var settingsmenu = document.querySelector(".settings-menu")
+var darkBtn = document.getElementById("dark-btn")
+
+
+const displaySettings = ()=>{
+    settingsmenu.classList.toggle("settings-menu-display")
+}
+
+darkBtn.onclick = function(){
+    darkBtn.classList.toggle("dark-btn-on");
+    document.body.classList.toggle("dark-theme")
+}
+
+const logoutHandler = () => {
+    localStorage.removeItem('loggedInUser')
+}
+
 const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
 if (!loggedInUser) window.location.href = "../login/index.html";
@@ -20,17 +37,7 @@ const {
 let combinedDate;
 let genderInput;
 
-// const userNameHtml = document.querySelector('#userName')
-// const firstNameHtml = document.querySelector('#firstName')
-// const lastNameHtml = document.querySelector('#lastName')
-// const emailHtml = document.querySelector('#email')
-// const countryHtml = document.querySelector('#country')
-// const dobHtml = document.querySelector('#dob')
-// const genderHtml = document.querySelector('#gender')
-// const pNumberHtml = document.querySelector('#phoneNumber')
-// const aboutHtml = document.querySelector('#about')
-// const hobbiesHtml = document.querySelector('#hobbies')
-// const profilePictureHtml = document.querySelector('#profilePicture2')
+
 
 const userNameInput = document.querySelector("#userNameInput");
 const firstNameInput = document.querySelector("#firstNameInput");
@@ -80,18 +87,7 @@ function combineDate() {
   console.log(combinedDate);
 }
 
-// userNameHtml.innerHTML = `${userName.slice(0, 1).toUpperCase()}${userName.slice(1).toLowerCase()}`
 
-// userNameHtml.innerHTML = userName ? userName : "No userName Updated"
-// firstNameHtml.innerHTML = firstName ? firstName : "No firstName Updated"
-// lastNameHtml.innerHTML = lastName ? lastName : "No lastName Updated"
-// emailHtml.innerHTML = email ? email : "No Email Updated"
-// countryHtml.innerHTML = country ? country : "No Country Updated"
-// pNumberHtml.innerHTML = pNumber ? pNumber : "No Phone Number Updated"
-// dobHtml.innerHTML = combinedDate ? combinedDate : "No DOB Updated"
-// genderHtml.innerHTML = gender ? gender : "No Gender Updated"
-// aboutHtml.innerHTML = about ? about : "No Description Updated"
-// hobbiesHtml.innerHTML = hobbies ? hobbies : "No hobbies Updated"
 
 // if(profileUrl) {
 //     profilePictureHtml.src = profileUrl
@@ -137,7 +133,7 @@ const updateSettingsHandler = () => {
     dob: combinedDate,
     about: aboutInput.value,
     hobbies: hobbiesInput.value.split(","),
-    // profileUrl: imageInput.value,
+    
   };
 
   console.log(userObj, "=====>>> userObj");
@@ -159,14 +155,14 @@ const updateSettingsHandler = () => {
     (myUser.dob = combinedDate),
     (myUser.about = aboutInput.value),
     (myUser.hobbies = hobbiesInput.value.split(",")),
-    // profileUrl: imageInput.value,
+    
     console.log(users, "===>>> users");
 
   console.log(myUser, "-===>> myUser");
 
   localStorage.setItem("loggedInUser", JSON.stringify(userObj));
   localStorage.setItem("users", JSON.stringify(users));
-  // window.location.href = '../login/index.html'
+  window.location.href = '../login/index.html'
 };
 
 const quitSettings = () => {
