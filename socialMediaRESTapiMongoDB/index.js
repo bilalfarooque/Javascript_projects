@@ -6,6 +6,8 @@ import helmet from "helmet"
 import morgan from "morgan"
 import authRouter from "./routes/authRoute.js"
 import { dbConnection } from "./utils/config.js"
+import userRouter from "./routes/userRoute.js"
+import postRouter from "./routes/postRoute.js"
 
 dotenv.config()
 
@@ -19,6 +21,8 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 app.use("/auth",authRouter)
+app.use("/user",userRouter)
+app.use("/post",postRouter)
 
 
 app.listen(process.env.PORT,()=>{

@@ -14,8 +14,8 @@ export const signupController = async (req, res) => {
         })
 
         //Generating Hashed Password for security
-        const salt =  await bcrypt.genSalt(10);
-        const  hashedPassword = await bcrypt.hash(password,salt)
+        // const salt =  await bcrypt.genSalt(10);
+        // const  hashedPassword = await bcrypt.hash(password,salt)
         
         //User.create method is used to create and save a new document (user) in the MongoDB database.
         const user = await User.create({
@@ -53,8 +53,7 @@ export const loginController = async (req, res) => {
         if (isUserExist) {
 
             //decrypt password to check and match
-            const validPass = await bcrypt.compare(password, isUserExist.password
-                .toString())
+            //const validPass = await bcrypt.compare(password, isUserExist.password.toString())
 
 
             if (isUserExist.password === password) return res.status(200).json({
