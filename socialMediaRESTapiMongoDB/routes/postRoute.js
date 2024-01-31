@@ -1,18 +1,23 @@
 import express  from "express";
-import { createPostController } from "../controllers/postsController.js";
+import { commentPostController, createPostController, deletePostController, getAllPostsController, getPostController, likePostController, updatePostController } from "../controllers/postsController.js";
 
 //user API
 const postRouter = express.Router()
 
 //create a post
 postRouter.post("/", createPostController)
-
 //update a post
+postRouter.put("/:id", updatePostController)
 //delete a post
-//get a post
-//get all timeline posts
+postRouter.delete("/:id", deletePostController)
 //like a post
+postRouter.put("/:id/like", likePostController)
 //comment a post
+postRouter.put("/:id/comment", commentPostController)
+//get a post
+postRouter.get("/", getAllPostsController)
+//get all timeline posts
+postRouter.get("/:id", getPostController)
 
 
 export default postRouter
