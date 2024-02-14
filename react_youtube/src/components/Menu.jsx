@@ -22,7 +22,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 
 const Container = styled.div`
   flex: 1;
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};
   min-height: 100vh;
   height: 100%;
