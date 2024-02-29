@@ -19,6 +19,7 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -82,15 +83,17 @@ export default function Menu({ darkMode, setDarkMode }) {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={logoImage} alt="logo" />
-          YouTube.dev
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Img src={logoImage} alt="logo" />
+            YouTube.dev
+          </Logo>
 
-        <Item>
-          <HomeIcon />
-          Home
-        </Item>
+          <Item>
+            <HomeIcon />
+            Home
+          </Item>
+        </Link>
 
         <Item>
           <ExploreIcon />
