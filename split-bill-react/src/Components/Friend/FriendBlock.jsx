@@ -5,8 +5,9 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 600px;
+  max-width: 400px;
   margin: 5px 0;
+  padding: 2px 8px;
 `;
 const FriendDetail = styled.div`
   display: flex;
@@ -14,33 +15,39 @@ const FriendDetail = styled.div`
   align-items: center;
   height: 80px;
   gap: 20px;
+  width: 100%;
 `;
 const FriendImg = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
 `;
 const FriendInfo = styled.div`
+  width: 100%;
+  height: 60px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
+  flex-direction: column;
 `;
 const FriendName = styled.h2`
   font-size: 18px;
   font-weight: 500;
   color: #000;
+  margin: 0;
 `;
 const FriendMoney = styled.p`
   font-size: 14px;
   font-weight: 500;
   color: #484b4b;
   font-family: sans-serif;
+  margin: 0;
 `;
 const Button = styled.button`
   background-color: #fd9e40;
-  width: fit-content;
+  width: 100px;
+  outline: none;
   border: none;
   padding: 8px 15px;
   font-weight: 600;
@@ -48,6 +55,7 @@ const Button = styled.button`
   border-radius: 5px;
   color: #2c2c2c;
   margin-right: 10px;
+  cursor: pointer;
 `;
 const FriendBlock = ({
   split,
@@ -59,8 +67,10 @@ const FriendBlock = ({
   friendObj,
   setFriendObj,
 }) => {
-  const select = (splitstatus, number) => {
-    friendArr[number].status = !splitstatus;
+  const select = (friendstatus, index) => {
+    console.log(friendstatus);
+    friendArr[index].status = !friendstatus;
+    console.log(friendArr[index]);
     setFriendArr(friendArr);
     setSplit(true);
     const obj = {
@@ -69,13 +79,18 @@ const FriendBlock = ({
     };
     setFriendObj(obj);
   };
-  const close = (splitstatus, number) => {
-    friendArr[number].status = !splitstatus;
+  const close = (friendstatus, index) => {
+    friendArr[index].status = !friendstatus;
     setFriendArr(friendArr);
     setSplit(false);
   };
   return (
-    <Container>
+    <Container
+      style={{
+        backgroundColor: singlefriend.status ? "#fcf2e0" : "transparent",
+        borderRadius: "5px",
+      }}
+    >
       <FriendDetail>
         <FriendImg src={singlefriend.friendImg} />
         <FriendInfo>

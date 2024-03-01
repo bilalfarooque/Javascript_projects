@@ -3,6 +3,10 @@ import styled from "styled-components";
 import FreindsCnt from "./Components/Friend/FriendsCnt";
 import Split from "./Components/Split/Split";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+
+const AppTitle = "Split Bill App".split(" ");
 
 const Container = styled.div`
   width: 100%;
@@ -22,9 +26,10 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 50px;
-  color: #195a09;
   text-align: center;
-  background-color: rgba(194, 188, 188, 0.8);
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  color: transparent;
   margin: 0;
   padding: 10px 0;
 `;
@@ -41,7 +46,19 @@ function App() {
   return (
     <>
       <Container>
-        <Title>Split Bill App</Title>
+        <Title>{AppTitle.map((el, i) => (
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: i / 2,
+          }}
+          key={i}
+        >
+          {el}{" "}
+        </motion.span>
+      ))}</Title>
         <Wrapper>
           <FreindsCnt
             friendArr={friendArr}
